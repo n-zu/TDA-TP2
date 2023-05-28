@@ -21,11 +21,14 @@ python3 .\tdatp.py E|A|A2 <items_file>
 
 Para demostrar que un problema es NP-Completo primero debemos demostrar que ese mismo problema sea NP. Es decir, que haya una solución que podamos revisarla en tiempo polinomial.
 
-En nuestro caso podemos ver que la validación del problema es lineal ya que se puede recorrer el conjunto e ir revisando los paquetes para ver que las sumas no se pasan de 1 en ninguno de ellos.
+En nuestro caso podemos validar el problema desde el punto de vista de su problema de decisión, dado la cantidad de envases nos deberíamos preguntar si es posible empaquetar usando a lo sumo esa cantidad.
+Esto lo podemos validar polinomialmente debido a que bastaría con recorrer el conjunto, llenando una cantidad de paquetes K y verificando que no se exceden de 1 cada envase. En definitiva necesitamos partir el conjunto en K subconjuntos de capacidad 1 para este caso
+Cabe aclarar que el problema de empaquetamiento plantea un problema de "optimización", problema que para validar deberíamos conocer con anticipación el óptimo y evaluar.
+Es por ello que nos centramos en la variante de decisión para validar que este problema está en NP.
 
 Luego debemos poder reducir otro problema NP-Completo a este. Vamos a utilizar el problema de la mochila.
 
-Si tenemos que cada objeto va a tener un mismo peso y valor correspondiente entre (0;1] y se irán agregando en mochilas con capacidad de 1 para usar la minima cantidad de mochilas, podemos reducir el problema al de empaquetamiento.
+Podemos ver que si nosotros tenemos un solo envase y cada elemento del conjunto tiene un mismo peso y valor que corresponden a su valor numérico, cada envase sería una mochila en la que se intenta colocar lo maximo que se puede para maximizar el valor.
 
 ## Implementaciones
 

@@ -71,3 +71,9 @@ def brute_packing(items, pckg_size=1, packages=[[]], current_size=0, best_size=N
       best_size = len(best)
     
   return best
+
+FUNCTIONS = {
+    'E': brute_packing,
+    'A': dumb_packing,
+    'A2': greedy_packing,
+}

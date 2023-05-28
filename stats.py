@@ -1,14 +1,8 @@
 import time
 import json
 import logging
-from packing import greedy_packing, dumb_packing, brute_packing
+from packing import FUNCTIONS
 from items.generate_items import generate_items
-
-FUNCTIONS = {
-    'greedy': greedy_packing,
-    'dumb': dumb_packing,
-    'brute': brute_packing
-}
 
 
 def aggregate( iterable ):

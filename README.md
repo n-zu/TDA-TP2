@@ -12,9 +12,15 @@ Dado un conjunto de n objetos cuyos tamaños son {T1, T2, · · · , Tn}, con Ti
 
 TODO
 
-## Demostracion de NP-Completitud
+## Demostracion que el problema de empaquetamiento es NP-Completo
 
->> TODO <<
+Para demostrar que un problema es NP-Completo primero debemos demostrar que ese mismo problema sea NP. Es decir, que haya una solución que podamos revisarla en tiempo polinomial.
+
+En nuestro caso podemos ver que la validación del problema es lineal ya que se puede recorrer el conjunto e ir armando paquetes sin pasarse de 1 entre la suma de cada objeto.
+
+Luego debemos poder reducir otro problema NP-Completo a este. Vamos a utilizar el problema de la mochila.
+
+Si tenemos que cada objeto va a tener un mismo peso y valor correspondiente entre (0;1] y se irán agregando en mochilas con capacidad de 1 para usar la minima cantidad de mochilas, podemos reducir el problema al de empaquetamiento.
 
 ## Implementaciones
 

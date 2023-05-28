@@ -60,4 +60,12 @@ Aproximacion: `3/2`
 
 ### Comparacion
 
-TODO
+#### Cantidad de paquetes
+
+![Cantidad de paquetes](./graphs/number_of_bins.png)
+
+#### Tiempo de ejecucion
+
+![Tiempo de ejecucion](./graphs/duration.png)
+
+> El tiempo de ejecucion de las aproximaciones es despreciable para la cantidad de elementos que se estan evaluando

@@ -22,13 +22,18 @@ python3 .\tdatp.py E|A|A2 <items_file>
 Para demostrar que un problema es NP-Completo primero debemos demostrar que ese mismo problema sea NP. Es decir, que haya una solución que podamos revisarla en tiempo polinomial.
 
 En nuestro caso podemos validar el problema desde el punto de vista de su problema de decisión, dado la cantidad de envases nos deberíamos preguntar si es posible empaquetar usando a lo sumo esa cantidad.
-Esto lo podemos validar polinomialmente debido a que bastaría con recorrer el conjunto, llenando una cantidad de paquetes K y verificando que no se exceden de 1 cada envase. En definitiva necesitamos partir el conjunto en K subconjuntos de capacidad 1 para este caso
+Esto lo podemos validar polinomialmente debido a que bastaría con recorrer el conjunto, llenando una cantidad de paquetes K y verificando que no se exceden de 1 cada envase. En definitiva necesitamos partir el conjunto en K subconjuntos de capacidad 1 para este caso.
 Cabe aclarar que el problema de empaquetamiento plantea un problema de "optimización", problema que para validar deberíamos conocer con anticipación el óptimo y evaluar.
 Es por ello que nos centramos en la variante de decisión para validar que este problema está en NP.
 
-Luego debemos poder reducir otro problema NP-Completo a este. Vamos a utilizar el problema de la mochila.
+Luego debemos poder reducir otro problema NP-Completo a este. Vamos a utilizar el problema de 3-Partition.
+La demostración de que dicho problema es NP-Completo se puede encontrar en la bibliografía de Garey and Johnson, 'Strong' NP-Completeness Results: Motivation, Examples, and Implications
 
-Podemos ver que si nosotros tenemos un solo envase y cada elemento del conjunto tiene un mismo peso y valor que corresponden a su valor numérico, cada envase sería una mochila en la que se intenta colocar lo maximo que se puede para maximizar el valor.
+En nuestro problema, como hemos mencionado anteriormente, tenemos que saber diferenciar el problema de optimización y el de decisón. Para la reducción tomamos el problema booleano que se plantea como "Se pueden empaquetar todos los elementos de un conjunto en k envases de tamaño 1".
+
+Vamos a definir que en nuestro problema tenemos un conjunto {T1, T2,......, Tn} donde cada elemento tiene un tamaño existente en (0,1] y se deben empaquetar los elementos del conjunto en k envases donde cada envase tiene una capacidad de 1.
+Ahora si para reducir el problema de 3-Partition deberiamos primero normalizar los valores del conjunto entre 0 y 1 ya que el problema mencionado trabaja con enteros positivos. Y luego si consideramos k=n/3 podemos ingresar el problema de 3-Partition de manera analoga para  obtener la respuesta de si es posible empaquetar los elementos en a lo sumo k envases.
+
 
 ## Implementaciones
 

@@ -27,12 +27,15 @@ Cabe aclarar que el problema de empaquetamiento plantea un problema de "optimiza
 Es por ello que nos centramos en la variante de decisión para validar que este problema está en NP.
 
 Luego debemos poder reducir otro problema NP-Completo a este. Vamos a utilizar el problema de 3-Partition.
-La demostración de que dicho problema es NP-Completo se puede encontrar en la bibliografía de Garey and Johnson, 'Strong' NP-Completeness Results: Motivation, Examples, and Implications
+La demostración de que dicho problema es NP-Completo se puede encontrar en la bibliografía de [Complexity Results for Multiprocessor Scheduling under Resource Constraints](https://epubs.siam.org/doi/abs/10.1137/0204035)
+
+> 3-Partition: Dados 3n numeros, pueden dividirse en 3 conjuntos de igual suma ?
 
 En nuestro problema, como hemos mencionado anteriormente, tenemos que saber diferenciar el problema de optimización y el de decisón. Para la reducción tomamos el problema booleano que se plantea como "Se pueden empaquetar todos los elementos de un conjunto en k envases de tamaño 1".
 
 Vamos a definir que en nuestro problema tenemos un conjunto {T1, T2,......, Tn} donde cada elemento tiene un tamaño existente en (0,1] y se deben empaquetar los elementos del conjunto en k envases donde cada envase tiene una capacidad de 1.
-Ahora si para reducir el problema de 3-Partition deberiamos primero normalizar los valores del conjunto entre 0 y 1 ya que el problema mencionado trabaja con enteros positivos. Y luego si consideramos k=n/3 podemos ingresar el problema de 3-Partition de manera analoga para  obtener la respuesta de si es posible empaquetar los elementos en a lo sumo k envases.
+
+Ahora si para reducir el problema de 3-Partition deberiamos primero normalizar los valores del conjunto entre 0 y 1 ya que el problema mencionado trabaja con enteros positivos. Si consideramos k=n/3 podemos ingresar el problema de 3-Partition de manera analoga para  obtener la respuesta de si es posible empaquetar los elementos en a lo sumo k envases.
 
 
 ## Implementaciones

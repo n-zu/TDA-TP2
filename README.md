@@ -8,7 +8,7 @@
 ## Definición del problema
 
 Dado un conjunto de n objetos cuyos tamaños son {T1, T2, · · · , Tn}, con Ti ∈ (0, 1], se debe empaquetarlos usando la mínima cantidad de envases de capacidad 1.
-## Ejecucion
+## Ejecución
 
 ```bash
 python3 .\tdatp.py E|A|A2 <items_file>
@@ -17,7 +17,7 @@ python3 .\tdatp.py E|A|A2 <items_file>
 > Ejemplo: `python3 .\tdatp.py E .\data\items_10.txt`
 
 
-## Demostracion que el problema de empaquetamiento es NP-Completo
+## Demostración que el problema de empaquetamiento es NP-Completo
 
 Para demostrar que un problema es NP-Completo primero debemos demostrar que ese mismo problema sea NP. Es decir, que haya una solución que podamos revisarla en tiempo polinomial.
 
@@ -42,12 +42,12 @@ Ahora si para reducir el problema de 3-Partition deberiamos primero normalizar l
 
 El codigo de las implementaciones puede encontrarse en el archivo `packing.py`
 
-### Implentacion Exacta (E)
+### Implentación Exacta (E)
 
 Complejidad: `O(N!)`
 > Evalua la heuristica A para cada permutacion de los elementos.
 
-### Implentacion Aproximada Propuesta (A)
+### Implentación Aproximada Propuesta (A)
 
 Complejidad: `O(N)`
 > Itera los elementos, agregandolos al ultimo envase si este tiene espacio, o creando uno nuevo en caso contrario.

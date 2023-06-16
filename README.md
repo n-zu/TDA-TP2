@@ -101,3 +101,17 @@ Para cada `E` cantidad de envases:
 - Se calcula el promedio y desvio de la cantidad de paquetes y el tiempo de ejecucion
 
 > Podemos encontrar el codigo que genera las estadiasticas en el archivo `stats2.py`
+> La generacion de los conjuntos de items (`generate_items_for_bins`) se encuentra en el archivo `generate_items.py`
+
+
+#### Cantidad de paquetes
+
+<100 bins | >100 bins
+:---: | :---:
+![Cantidad de paquetes](./graphs/number_of_bins_2.1.png) | ![Cantidad de paquetes](./graphs/number_of_bins_2.2.png)
+
+#### Tiempo de ejecucion
+
+<100 bins | >100 bins
+:---: | :---:
+![Tiempo de ejecucion](./graphs/duration_2.1.png)|![Tiempo de ejecucion](./graphs/duration_2.2.png)

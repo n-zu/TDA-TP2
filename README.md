@@ -81,6 +81,8 @@ Para cada `N` cantidad de elementos:
 - Se ejecutan las 3 implementaciones para cada conjunto
 - Se calcula el promedio y desvio de la cantidad de paquetes y el tiempo de ejecucion
 
+> Podemos encontrar el codigo que genera las estadiasticas en el archivo `stats.py`
+
 #### Cantidad de paquetes
 
 ![Cantidad de paquetes](./graphs/number_of_bins.png)
@@ -90,3 +92,12 @@ Para cada `N` cantidad de elementos:
 ![Tiempo de ejecucion](./graphs/duration.png)
 
 > El tiempo de ejecucion de las aproximaciones es despreciable para la cantidad de elementos que se estan evaluando
+
+### Evaluacion de aproximaciones
+
+Para cada `E` cantidad de envases:
+- Se generan `M` conjuntos de items aleatorios que ocupen exacta y completamente `E` envases
+- Se ejecutan ambas aproximaciones para cada conjunto
+- Se calcula el promedio y desvio de la cantidad de paquetes y el tiempo de ejecucion
+
+> Podemos encontrar el codigo que genera las estadiasticas en el archivo `stats2.py`

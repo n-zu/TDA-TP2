@@ -77,3 +77,8 @@ FUNCTIONS = {
     'A': greedy_packing_N,
     'A2': greedy_packing_N2,
 }
+
+APROXIMATIONS = {
+    'A': greedy_packing_N,
+    'A2': greedy_packing_N2,
+}

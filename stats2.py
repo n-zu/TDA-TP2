@@ -1,8 +1,8 @@
 import time
 import json
 import logging
-from ..packing import FUNCTIONS
-from items.generate_items import generate_items
+from packing import APROXIMATIONS
+from items.generate_items import generate_items_for_bins
 
 
 def aggregate( iterable ):
@@ -30,18 +30,22 @@ def run_stats( function, items ):
         "duration": duration
     }
 
-def generate_iteration_stats( functions, number_of_items, repetitions ):
+def generate_iteration_stats( functions, number_of_bins, repetitions ):
 
-    logging.info(f"Iteration [{number_of_items}]: ")
+    logging.info(f"Bins [{number_of_bins}]: ")
 
-    iteration_stats = {}
+    iteration_stats = { "items": [] }
     for name in functions.keys():
         iteration_stats[name] = []
 
     for i in range(repetitions):
+        logging.debug(f"  It:{i+1}")
         start_time = time.time()
-        items = generate_items(number_of_items)
+        items = generate_items_for_bins(number_of_bins)
+        iteration_stats["items"].append({ "len": len(items)})
+
         for name, function in functions.items():
+            logging.debug(f"    {name}")
             iteration_stats[name].append( run_stats(function, items) )
         logging.debug(f"  {i+1} - {time.time()-start_time}")
     
@@ -51,24 +55,25 @@ def generate_iteration_stats( functions, number_of_items, repetitions ):
     logging.debug(iteration_stats)
     return iteration_stats
 
-def generate_stats( functions = FUNCTIONS, start=3, stop=12, step=3, repetitions=10, fs=None ):
+def generate_stats( functions = APROXIMATIONS, start=10, stop=100, step=10, repetitions=10, fs=None ):
 
     stats={
-        "items": [],
+        "bins": [],
+        "items": []
     }
     for name in functions.keys():
         stats[name] = []
 
-    for number_of_items in range(start, stop+1, step):
-        stats["items"].append(number_of_items)
+    for number_of_bins in range(start, stop+1, step):
+        stats["bins"].append(number_of_bins)
 
-        iteration_stats = generate_iteration_stats(functions, number_of_items, repetitions)
+        iteration_stats = generate_iteration_stats(functions, number_of_bins, repetitions)
 
         for name, data in iteration_stats.items():
             stats[name].append(data)
 
         if fs is not None:
-            iteration_stats["items"] = number_of_items
+            iteration_stats["bins"] = number_of_bins
             fs.write(json.dumps(iteration_stats))
             fs.write("\n")
 
@@ -82,7 +87,7 @@ if __name__ == "__main__":
     logging.addLevelName(
         logging.INFO, "\033[1;34m%s\033[1;0m" % logging.getLevelName(logging.INFO))
 
-    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s',
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',
                         datefmt='%H:%M:%S')
-    with open("data/stats.json", "w") as f:
+    with open("data/stats2.json", "w") as f:
         generate_stats(fs=f)

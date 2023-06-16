@@ -1,4 +1,4 @@
-def greedy_packing( items, pckg_size = 1 ):
+def greedy_packing_N2( items, pckg_size = 1 ):
   _items = items[:]
   packages = [[]]
   current_size = 0
@@ -22,7 +22,7 @@ def greedy_packing( items, pckg_size = 1 ):
   return packages
 
 
-def dumb_packing( items, pckg_size = 1):
+def greedy_packing_N( items, pckg_size = 1):
   packages = [[]]
   current_size = 0
 
@@ -74,6 +74,6 @@ def brute_packing(items, pckg_size=1, packages=[[]], current_size=0, best_size=N
 
 FUNCTIONS = {
     'E': brute_packing,
-    'A': dumb_packing,
-    'A2': greedy_packing,
+    'A': greedy_packing_N,
+    'A2': greedy_packing_N2,
 }

@@ -42,15 +42,12 @@ Ahora si para reducir el problema de 3-Partition deberiamos primero normalizar l
 
 El codigo de las implementaciones puede encontrarse en el archivo `packing.py`
 
-### Implentación Exacta (E)
-
-Complejidad: `O(N!)`
-> Evalua la heuristica A para cada permutacion de los elementos.
-
 ### Implentación Aproximada Propuesta (A)
 
+Itera los elementos, agregandolos al ultimo envase si este tiene espacio, o creando uno nuevo en caso contrario.
+
 Complejidad: `O(N)`
-> Itera los elementos, agregandolos al ultimo envase si este tiene espacio, o creando uno nuevo en caso contrario.
+> Ya que itera los N elementos una sola vez
 
 Aproximacion: `2`
 > En el peor de los casos tendremos elementos con el siguiente formato: [m,M,m,M,...,m,M], 
@@ -60,16 +57,29 @@ Aproximacion: `2`
 
 ### Implentacion Aproximada Propia (A2)
 
+Mientras haya elementos disponibles, los itera intentando agregarlos al envase actual (removiendolos de los elementos disponibles), si no entra ninguno crea un nuevo envase.
+
 Complejidad: `O(N^2)`
-> Mientras haya elementos, los itera intentando agregarlos al envase actual, si no entra ninguno crea un nuevo envase.
+> Ya que en cada pasada itera todos los elementos disponibles, pudiendo haber hasta N pasadas
 
 Aproximacion: `3/2`
 > En el peor de los casos, se conforma un paquete utilizando 2 elementos mas pequeños que podrian haberse emparejado con elementos mas grandes que ahora ocupan un paquete individualmente
 >
 > Eg: [0.5, 0.4, 0.5, 0.6] -> [ [0.5, 0.4], [0.5], [0.6] ] ( podemos pensar en estos elementos como agrupaciones de elementos mas pequeños )
 
+### Implentación Exacta (E)
 
-### Comparacion
+Evalua la heuristica A para cada permutacion de los elementos.
+
+Complejidad: `O(N!)`
+> Ya que hay N! permutaciones de N elementos
+
+### Comparacion con algoritmo exacto
+
+Para cada `N` cantidad de elementos:
+- Se generan `M` conjuntos de `N` elementos aleatorios
+- Se ejecutan las 3 implementaciones para cada conjunto
+- Se calcula el promedio y desvio de la cantidad de paquetes y el tiempo de ejecucion
 
 #### Cantidad de paquetes
 

@@ -55,7 +55,7 @@ def generate_iteration_stats( functions, number_of_bins, repetitions ):
     logging.debug(iteration_stats)
     return iteration_stats
 
-def generate_stats( functions = APROXIMATIONS, start=100, stop=1000, step=100, repetitions=10, fs=None ):
+def generate_stats( functions = APROXIMATIONS, start=10, stop=100, step=10, repetitions=10, fs=None ):
 
     stats={
         "bins": [],

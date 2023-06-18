@@ -92,15 +92,12 @@ Para cada `N` cantidad de elementos:
 
 > Podemos encontrar el codigo que genera las estadiasticas en el archivo `stats.py`
 
-#### Cantidad de paquetes
+Cantidad de paquetes | Tiempo de ejecucion
+:---: | :---:
+![Cantidad de paquetes](./graphs/number_of_bins.png)|![Tiempo de ejecucion](./graphs/duration.png)
 
-![Cantidad de paquetes](./graphs/number_of_bins.png)
-
-#### Tiempo de ejecucion
-
-![Tiempo de ejecucion](./graphs/duration.png)
-
-> El tiempo de ejecucion de las aproximaciones es despreciable para la cantidad de elementos que se estan evaluando
+> Incluso con una cantidad baja de elementos, el algoritmo exacto es muy costoso, mientras que el tiempo de ejecucion de las aproximaciones es despreciable para la cantidad de elementos que se estan evaluando.
+> Evaluar las aproximaciones con tan pocos elementos no tiene sentido, por lo que se realiza en la siguiente seccion.
 
 ### Evaluacion de aproximaciones
 

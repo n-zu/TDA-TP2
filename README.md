@@ -21,8 +21,9 @@ python3 .\tdatp.py E|A|A2 <items_file>
 
 Para demostrar que un problema es NP-Completo primero debemos demostrar que ese mismo problema sea NP. Es decir, que haya una solución que podamos revisarla en tiempo polinomial.
 
-En nuestro caso podemos validar el problema desde el punto de vista de su problema de decisión, dado la cantidad de envases nos deberíamos preguntar si es posible empaquetar usando a lo sumo esa cantidad.
-Esto lo podemos validar polinomialmente debido a que bastaría con recorrer el conjunto, llenando una cantidad de paquetes K y verificando que no se exceden de 1 cada envase y que a su vez TODOS los elementos del conjunto quedan empaquetados. En definitiva necesitamos partir el conjunto en K subconjuntos de capacidad 1 utilizando todo el arreglo para este caso.
+En nuestro caso podemos validar el problema desde el punto de vista de su problema de decisión, dado la cantidad de envases nos deberíamos preguntar si es posible empaquetar usando a lo sumo esa cantidad. Es necesario que todas las pautas que incluyen a la solución sean válidas.
+Esto lo podemos validar polinomialmente debido a que bastaría primero con recorrer el conjunto, llenando una cantidad de paquetes K y verificando que no se exceden de 1 cada envase y que a su vez TODOS los elementos del conjunto queden empaquetados. En definitiva necesitamos partir el conjunto en K subconjuntos de capacidad 1 utilizando todo el arreglo para este caso.
+Tambien deberíamos validar que todos los elementos del arreglo esten entre 0 y 1, para formar la solución. Así se cumplirían todas las condiciones necesarias que plantea nuestro problema.
 Cabe aclarar que el problema de empaquetamiento plantea un problema de "optimización", problema que para validar deberíamos conocer con anticipación el óptimo y evaluar.
 Es por ello que nos centramos en la variante de decisión para validar que este problema está en NP.
 

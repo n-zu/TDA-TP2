@@ -119,8 +119,13 @@ Para cada `E` cantidad de envases:
 :---: | :---:
 ![Cantidad de paquetes](./graphs/number_of_bins_2.1.png) | ![Cantidad de paquetes](./graphs/number_of_bins_2.2.png)
 
+> Observamos que en el promedio, las aproximaciones son mejores que su peor caso (2 y 3/2 respectivamente).
+> La aproximacion A suele ser un 30% peor que la optima, mientras que la A2 solo difiere en 1 elemento.
+
 #### Tiempo de ejecucion
 
 <100 bins | >100 bins
 :---: | :---:
 ![Tiempo de ejecucion](./graphs/duration_2.1.png)|![Tiempo de ejecucion](./graphs/duration_2.2.png)
+
+> Observamos claramente la tendencia lineal de A y la cuadratica de A2.

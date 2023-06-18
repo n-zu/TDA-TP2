@@ -21,11 +21,19 @@ python3 .\tdatp.py E|A|A2 <items_file>
 
 Para demostrar que un problema es NP-Completo primero debemos demostrar que ese mismo problema sea NP. Es decir, que haya una solución que podamos revisarla en tiempo polinomial.
 
-En nuestro caso podemos validar el problema desde el punto de vista de su problema de decisión, dado la cantidad de envases nos deberíamos preguntar si es posible empaquetar usando a lo sumo esa cantidad. Es necesario que todas las pautas que incluyen a la solución sean válidas.
-Esto lo podemos validar polinomialmente debido a que bastaría primero con recorrer el conjunto, llenando una cantidad de paquetes K y verificando que no se exceden de 1 cada envase y que a su vez TODOS los elementos del conjunto queden empaquetados. En definitiva necesitamos partir el conjunto en K subconjuntos de capacidad 1 utilizando todo el arreglo para este caso.
-Tambien deberíamos validar que todos los elementos del arreglo esten entre 0 y 1, para formar la solución. Así se cumplirían todas las condiciones necesarias que plantea nuestro problema.
-Cabe aclarar que el problema de empaquetamiento plantea un problema de "optimización", problema que para validar deberíamos conocer con anticipación el óptimo y evaluar.
-Es por ello que nos centramos en la variante de decisión para validar que este problema está en NP.
+#### Demostracion de NP
+
+Se debe poder demostrar que una solucion propuesta es _correcta_ en tiempo polinomial.
+
+Dado un arreglo de paquetes con sus items asignados podemos:
+- Verificar que los items de la solucion sean los items del problema.
+  > Podriamos tener una copia de los items del problema y removerlos a medida que recorremos la solucion.
+  > O(N^2)
+- Verificar que la capacidad de cada paquete sea menor o igual a 1.
+  > Podriamos recorrer cada paquete y verificar que la suma de los items sea menor o igual a 1.
+  > O(N)
+
+#### Demostracion de NP-Completo
 
 Luego debemos poder reducir otro problema NP-Completo a este. Vamos a utilizar el problema de 3-Partition.
 La demostración de que dicho problema es NP-Completo se puede encontrar en la bibliografía de [Complexity Results for Multiprocessor Scheduling under Resource Constraints](https://epubs.siam.org/doi/abs/10.1137/0204035)
